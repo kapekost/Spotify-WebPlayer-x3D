@@ -2,8 +2,8 @@ version: "3.7"
 
 services:
   server:
-    container_name: reactproject
-    image: reactproject:production
+    container_name: x3dspotify
+    image: x3dspotify:production
     env_file:
       - ./server/.env.production
     environment:

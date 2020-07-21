@@ -17,7 +17,7 @@ the api runs in modules under `/src`
   - default version, or can be inherited to split versions per request
   - responsible to connect to the storage module and serve the request. Any logic should be processed here, or detached to another module loaded here
 - `serverRoutes` handles the routing based on version to the corresponding handler
-- `storage` is the module to wrap any storage service being used
+- `spotifyAPI` is the module to wrap spotify commands
 
 # Development
 

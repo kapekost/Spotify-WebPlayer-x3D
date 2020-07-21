@@ -1,11 +1,10 @@
 var path = require("path");
 const restify = require("restify");
-const Storage = require("./storage");
 
 const corsMiddleware = require("restify-cors-middleware");
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config({
-    path: "./env.development",
+    path: "./.env.development",
   });
   console.log("env ", process.env.NODE_ENV);
 } else {
@@ -15,12 +14,11 @@ if (process.env.NODE_ENV !== "production") {
   });
 }
 console.log("env ", process.env.NODE_ENV);
-const storage = new Storage();
 
 const ServerRoutes = require("./serverRoutes");
 const server_version = "1.0.0";
 const server = restify.createServer({
-  name: "react-server",
+  name: "spotifyX3D",
   version: server_version,
 });
 
@@ -49,7 +47,7 @@ server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
 
-const serverRoutes = new ServerRoutes(server, restify, storage);
+const serverRoutes = new ServerRoutes(server, restify);
 
 serverRoutes.attachBaseRoutes();
 server.get(

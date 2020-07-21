@@ -2,8 +2,8 @@ version: "3.7"
 
 services:
   webclient:
-    container_name: webclient
-    image: webclient
+    container_name: x3dspotify_webclient
+    image: x3dsoptify:webclient
     build:
       context: ./webclient
       dockerfile: Dockerfile
@@ -16,11 +16,13 @@ services:
       - CHOKIDAR_USEPOLLING=true
     tty: true
   server:
-    container_name: server
-    image: server
+    container_name: x3dspotify_server
+    image: x3dapotify:server
     build:
       context: ./server
       dockerfile: Dockerfile
+    env_file:
+      - ./server/.env.development
     volumes:
       - "./server:/app"
       - "/app/node_modules"
