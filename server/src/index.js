@@ -18,7 +18,7 @@ console.log("env ", process.env.NODE_ENV);
 const ServerRoutes = require("./serverRoutes");
 const server_version = "1.0.0";
 const server = restify.createServer({
-  name: "spotifyX3D",
+  name: "spotifyX3D server",
   version: server_version,
 });
 

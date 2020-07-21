@@ -11229,6 +11229,11 @@ ws@^6.1.2, ws@^6.2.1:
   dependencies:
     async-limiter "~1.0.0"
 
+x3dom@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/x3dom/-/x3dom-1.8.1.tgz#c5f2c48c37f6fcc4a74a5e66baf6551ba0091e8a"
+  integrity sha512-rlKMA0pWkBUqoC75fjSm1rRJhdlnqXcCgEP5MHsspcO5pdkr0J52oO5EmmR1eOCzex5U4qAlyG8aFVoZy8wtfA==
+
 xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"

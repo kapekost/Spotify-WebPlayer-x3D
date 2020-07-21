@@ -31,15 +31,6 @@ module.exports = class ServerRoutes {
         },
       ])
     );
-    this.server.post(
-      this.baseURL + "/login",
-      this.restify.plugins.conditionalHandler([
-        {
-          version: ["1.0.0", "2.0.0"],
-          handler: this.requestHandlers.getUser,
-        },
-      ])
-    );
     // The client request to start playback on that device
     this.server.put(
       this.baseURL + "/play/:device_id",
