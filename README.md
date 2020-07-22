@@ -1,48 +1,37 @@
-# React-REST-Auth - in Docker with NodeJS service
+# X3D Spotify Music Player
 
-A template project to start a fast PoC
+3D visual music player for WebGL compatible browsers.
+Tested on Oculus GO, mobile and desktop browsers
 
-- easy to add modules to the current service, and support versioning
-- client ready to support navigation menu, split context for each page in React
+## sample
 
-[in progress]
+https://spotifyx3d.herokuapp.com/
 
-React Authentication, middleware, hooks, navigation and async REST requests
+## About
 
-There is a basic setup for 2 projects,
-
-- ReactJS app
-- NodeJS server
-
-Each project has a Dockerfile to start in development mode hooking to your local files for live editing and refresh
-A main docker-compose file starts both, and a production version that copies the react built project under the /public serve directory of the server
+- create a Spotify App and get your Client ID and Secret ID
+- The App is using the Spotify web SDK to get a token
+- The nodeJS server will do the redirections in a way to provide the token from the client to the server
+- The server will setup the callback url for the Spotify service, will connect to spotify server to get your client id and device to trigger automatically the playback
+- The client triggers commands to play next/previous and pause the playback
+- Using the `unsplash API` the app will download a different background image for each song
+- NJoy
 
 ## Development
 
-```
-docker-compose up
-```
-
-- node server on http://localhost:8080
-- react development server on http://localhost:3000/public
-
-## Production build
-
-### with Docker
+- create a config file in the root directory `config.local` and set
 
 ```
-docker-compose -f docker-compose.production.yml up
+SPOTIFY_CLIENT_ID=<your client id here>
+SPOTIFY_SECRET_ID=<your spotify secret id here>
+HOST_URL=<your reachable host url (for dev I used ngrok)>
 ```
 
-- node server on http://localhost:8080
+- npm install
+- npm run start
+- navigate to `http://localhost:8080/`
 
-### alternatively, `without Docker`, you can start the projects within their directory with common node / yarn
+### Background image
 
-in each project
-
-```
-yarn install
-yarn start
-```
-
-- navigate with the browser to http://localhost:8080/public/index.html
+in `client/index.js:186` set your `unsplash` client_id
+or replace the return of the `FetchAndUpdateBackgroundImage()` function to provide the background you wish

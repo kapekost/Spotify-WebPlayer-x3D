@@ -1,0 +1,18 @@
+{
+  "name": "spotifyx3d",
+  "version": "1.0.0",
+  "description": "3d and music - spotifyx3d",
+  "main": "server/index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "restify": "^7.3.0",
+    "superagent": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index"
+  },
+  "author": "Kostas Kapetanakis",
+  "license": "ISC"
+}
